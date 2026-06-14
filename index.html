@@ -9,8 +9,8 @@
             --brand-red: #900000;
             --brand-blue: #1c2859;
             --flag-accent: #a9c2c9;
-            --light-bg: #f4f7f6;
-            --text-dark: #333;
+            --light-bg: #f0f4f8;
+            --text-dark: #2d3748;
             --white: #ffffff;
         }
         
@@ -20,67 +20,108 @@
             padding: 0;
             color: var(--text-dark);
             background-color: var(--light-bg);
-            line-height: 1.6;
+            line-height: 1.7;
+            overflow-x: hidden;
         }
 
+        /* --- Animations --- */
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        /* --- Header & Hero --- */
         header {
             background-color: var(--white);
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             text-align: center;
-            border-bottom: 5px solid var(--brand-red);
+            border-bottom: 4px solid var(--brand-red);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            animation: fadeIn 1s ease-in forwards;
         }
 
         .logo {
             max-width: 350px;
             height: auto;
+            transition: transform 0.4s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.03);
         }
 
         .hero {
             background-color: var(--brand-blue);
             color: var(--white);
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             text-align: center;
-            border-bottom: 5px solid var(--flag-accent);
+            border-bottom: 6px solid var(--flag-accent);
+            position: relative;
         }
 
         .hero h1 {
             margin: 0 0 1rem 0;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             max-width: 800px;
             margin: 0 auto;
             font-weight: 500;
+            opacity: 0.9;
         }
 
+        /* --- Content Layout --- */
         .container {
             max-width: 900px;
-            margin: 3rem auto;
+            margin: 4rem auto;
             padding: 0 2rem;
         }
 
         .section {
             background: var(--white);
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            margin-bottom: 2.5rem;
-            border-left: 6px solid var(--brand-red);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+            border-left: 8px solid var(--brand-red);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
         }
 
         h2 {
             color: var(--brand-blue);
             margin-top: 0;
-            font-size: 1.8rem;
+            font-size: 2rem;
+            margin-bottom: 1rem;
         }
 
+        /* --- Buttons --- */
         .btn-container {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 1.5rem;
             margin-top: 2rem;
             flex-wrap: wrap;
@@ -88,66 +129,82 @@
 
         .btn {
             display: inline-block;
-            padding: 14px 28px;
+            padding: 14px 32px;
             background-color: var(--brand-blue);
             color: var(--white);
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background-color 0.3s, transform 0.2s;
+            letter-spacing: 1.5px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 6px rgba(28, 40, 89, 0.2);
         }
 
         .btn:hover {
             background-color: var(--brand-red);
-            transform: translateY(-2px);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 15px rgba(144, 0, 0, 0.3);
         }
 
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        /* --- Images --- */
         .donate-image {
             text-align: center;
-            margin-top: 2rem;
-            padding: 1rem;
+            margin-top: 2.5rem;
+            padding: 1.5rem;
             background-color: var(--light-bg);
-            border-radius: 8px;
+            border-radius: 12px;
+            border: 1px dashed #ccc;
         }
 
         .donate-image img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
+            transition: transform 0.4s ease;
+        }
+
+        .donate-image img:hover {
+            transform: scale(1.02);
         }
 
         footer {
             background-color: var(--brand-blue);
             color: var(--white);
             text-align: center;
-            padding: 2rem 0;
-            font-size: 0.9rem;
-            border-top: 5px solid var(--brand-red);
+            padding: 3rem 0;
+            font-size: 0.95rem;
+            border-top: 6px solid var(--brand-red);
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <!-- Logo placed here -->
+    <!-- CHECK YOUR EXACT GITHUB FILE NAME AND CHANGE "1000037876.jpg" BELOW IF NEEDED -->
     <img src="1000037876.jpg" alt="Freedom Full Send Logo" class="logo">
 </header>
 
 <div class="hero">
-    <h1>Healing, Community, and Purpose</h1>
-    <p>Using drone technology as a tool to give back to our nation's heroes.</p>
+    <div class="animate-fade-up">
+        <h1>Healing, Community, and Purpose</h1>
+        <p>Using drone technology as a tool to give back to our nation's heroes.</p>
+    </div>
 </div>
 
 <div class="container">
-    <div class="section">
+    <div class="section animate-fade-up delay-1">
         <h2>About Our Mission</h2>
         <p>At Freedom Full Send, we are dedicated to providing a welcoming space where Veterans can connect, share stories, and build camaraderie. Based out of New Braunfels, we host monthly drone fly days for Veterans in San Antonio and the surrounding communities.</p>
         <p>Whether you are a first-time pilot or a seasoned flyer, our events offer hands-on drone flying designed to provide profound mental health benefits. The calm, focus, and freedom of flight create moments of relaxation, decompression, and mutual support.</p>
     </div>
 
-    <div class="section">
+    <div class="section animate-fade-up delay-2">
         <h2>Register for an Event</h2>
         <p>If you are a Veteran in the area or you know one, we would love to see you join us. Let's fly, decompress, and honor the spirit of service together.</p>
         <p>All registrations and upcoming event details are managed through our social media platforms. Follow us to stay updated and get involved!</p>
@@ -157,12 +214,12 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section animate-fade-up delay-3">
         <h2>Support Freedom Full Send</h2>
         <p>Your generous contributions make our monthly drone fly days possible. To donate, please scan the appropriate QR code below for PayPal, Venmo, or CashApp. Every contribution directly supports our mission to empower Veterans through flight.</p>
         <div class="donate-image">
-            <!-- QR Codes placed here -->
-            <img src="1000037870.jpg" alt="Donation QR Codes for Freedom Full Send including PayPal, Venmo, and Cashapp">
+            <!-- CHECK YOUR EXACT GITHUB FILE NAME AND CHANGE "1000037870.jpg" BELOW IF NEEDED -->
+            <img src="1000037870.jpg" alt="Donation QR Codes for Freedom Full Send">
         </div>
     </div>
 </div>
