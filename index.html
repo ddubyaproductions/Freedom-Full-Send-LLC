@@ -6,8 +6,9 @@
     <title>Freedom Full Send | Healing Through Flight</title>
     <style>
         :root {
-            --navy: #0b2341;
-            --teal: #4db6ac;
+            --brand-red: #900000;
+            --brand-blue: #1c2859;
+            --flag-accent: #a9c2c9;
             --light-bg: #f4f7f6;
             --text-dark: #333;
             --white: #ffffff;
@@ -23,31 +24,30 @@
         }
 
         header {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 1.5rem 0;
+            background-color: var(--white);
+            padding: 2rem 0;
             text-align: center;
+            border-bottom: 5px solid var(--brand-red);
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.2rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        .logo {
+            max-width: 350px;
+            height: auto;
         }
 
         .hero {
-            background-color: var(--teal);
+            background-color: var(--brand-blue);
             color: var(--white);
             padding: 4rem 2rem;
             text-align: center;
+            border-bottom: 5px solid var(--flag-accent);
         }
 
-        .hero h2 {
+        .hero h1 {
             margin: 0 0 1rem 0;
             font-size: 2.5rem;
-            border-bottom: none;
-            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .hero p {
@@ -59,7 +59,7 @@
 
         .container {
             max-width: 900px;
-            margin: -2rem auto 2rem auto;
+            margin: 3rem auto;
             padding: 0 2rem;
         }
 
@@ -67,71 +67,76 @@
             background: var(--white);
             padding: 2.5rem;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 2.5rem;
+            border-left: 6px solid var(--brand-red);
         }
 
         h2 {
-            color: var(--navy);
-            border-bottom: 3px solid var(--teal);
-            padding-bottom: 0.5rem;
+            color: var(--brand-blue);
             margin-top: 0;
+            font-size: 1.8rem;
         }
 
         .btn-container {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 24px;
-            background-color: var(--navy);
+            padding: 14px 28px;
+            background-color: var(--brand-blue);
             color: var(--white);
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 4px;
             font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: background-color 0.3s, transform 0.2s;
         }
 
         .btn:hover {
-            background-color: var(--teal);
+            background-color: var(--brand-red);
             transform: translateY(-2px);
         }
 
         .donate-image {
             text-align: center;
             margin-top: 2rem;
+            padding: 1rem;
+            background-color: var(--light-bg);
+            border-radius: 8px;
         }
 
         .donate-image img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            border: 1px solid #eaeaea;
         }
 
         footer {
-            background-color: var(--navy);
+            background-color: var(--brand-blue);
             color: var(--white);
             text-align: center;
             padding: 2rem 0;
-            margin-top: 3rem;
             font-size: 0.9rem;
+            border-top: 5px solid var(--brand-red);
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Freedom Full Send</h1>
+    <!-- Logo placed here -->
+    <img src="1000037876.jpg" alt="Freedom Full Send Logo" class="logo">
 </header>
 
 <div class="hero">
-    <h2>Healing, Community, and Purpose</h2>
+    <h1>Healing, Community, and Purpose</h1>
     <p>Using drone technology as a tool to give back to our nation's heroes.</p>
 </div>
 
@@ -156,6 +161,7 @@
         <h2>Support Freedom Full Send</h2>
         <p>Your generous contributions make our monthly drone fly days possible. To donate, please scan the appropriate QR code below for PayPal, Venmo, or CashApp. Every contribution directly supports our mission to empower Veterans through flight.</p>
         <div class="donate-image">
+            <!-- QR Codes placed here -->
             <img src="1000037870.jpg" alt="Donation QR Codes for Freedom Full Send including PayPal, Venmo, and Cashapp">
         </div>
     </div>
